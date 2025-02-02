@@ -190,3 +190,123 @@
     color: white;
     padding: 0 16px;
 }
+
+@media screen and (max-width:1260px){
+    .typeFilter>div>span {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:960px){
+    .advancedFilters{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .typeFilter{
+        width: 100%;
+    }
+
+    .typeFilter>div {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .typeFilter>div>span {
+        width: 100%;
+    }
+
+    .otherFilters {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .abilityList {
+        margin-bottom: 30px;
+        width: 360px;
+        box-sizing: border-box;
+    }
+
+    .abilityList>span {
+        box-sizing: border-box;
+    }
+
+    .numberRange {
+        margin-bottom: 30px;
+    }
+
+    .advancedFilters>div>h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .otherFilters>section>div {
+        font-size: 16px;
+        width: 100px;
+        height: 40px;
+    }
+
+    .otherFilters>section>button {
+        font-size: 16px;
+        width: 120px;
+    }
+
+    .otherFilters>section>button::before {
+        width: 12px;
+        height: 12px;
+    }
+
+    .abilityList>ul {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width:480px){
+    .typeFilter>div {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .advancedFilters{
+        gap: 20px;
+    }
+
+    .advancedFilters>div>h2 {
+        margin-bottom: 5px;
+    }
+
+    .abilityList {
+        margin-bottom: 15px;
+        width: 260px;
+    }
+
+    .abilityList>span {
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .abilityList>ul>li {
+        font-size: 14px;
+        padding: 6px 5px 6px;
+    }
+
+    .advancedFilters>div>h2 {
+        font-size: 20px;
+    }
+
+    .typeFilter>div>span {
+        font-size: 14px;
+    }
+
+    .abilityList>ul {
+        height: 150px;
+    }
+
+    .numberRange {
+        margin-bottom: 20px;
+    }
+
+    .numberRange>input {
+        height: 32px;
+        font-size: 14px;
+    }
+}

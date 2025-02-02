@@ -122,3 +122,50 @@
     color: white;
     cursor: pointer;
 }
+
+@media screen and (max-width:1321px){
+    .mainPage {
+        width: 100%;
+        min-width: 0px;
+    }
+
+    .mainPage>div {
+        min-width: 910px;
+    }
+}
+
+@media screen and (max-width:1024px){
+    .mainPage {
+        width: 100%;
+        min-width: 0px;
+    }
+
+    .mainPage>div {
+        width: 86%;
+        min-width: 86%;
+    }
+
+    .openWrapper {
+        padding: 0 3em;
+    }
+}
+
+
+@media screen and (max-width:698px){
+    .mainPage>div>h1 {
+        font-size: 26px;
+    }
+
+    .openWrapper {
+        padding: 0 1em;
+    }
+    .mainPage>div>.handler{
+        width: 240px;
+    }
+}
+
+@media screen and (max-width:480px){
+    .closedWrapper{
+        padding: 0.25em 1em;
+    }
+}

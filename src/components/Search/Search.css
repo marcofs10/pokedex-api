@@ -72,3 +72,85 @@
     font-size: 20px;
     text-align: start;
 }
+
+@media screen and (max-width:960px) {
+    .search {
+        flex-direction: column;
+        gap: 20px;
+        padding: 1em 0 2em;
+    }
+
+    .search>div {
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .search>div>span {
+        text-align: start;
+    }
+
+    .search>div>section{
+        width: 100%;
+    }
+
+    .search>div>section>form {
+        width: 100%;
+    }
+
+    .search>div>section>form>input {
+        width: 100%;
+    }
+
+    .search>span {
+        width: 69%;
+    }
+}
+
+@media screen and (max-width:698px) {
+    .search>div {
+        width: 75%;
+    }
+
+
+    .search>div>span {
+        font-size: 18px;
+    }
+
+    .search>div>section{
+        width: 100%;
+    }
+
+    .search>div>section>form {
+        gap: 10px;
+    }
+
+    .search>div>section>form>input {
+        font-size: 16px;
+    }
+
+    .buttonSubmit {
+        padding: 0px 15px;
+    }
+
+    .buttonSubmit>img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .search>span {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:398px) {
+    .search>div {
+        width: 85%;
+    }
+
+    .search>span {
+        width: 82%;
+        padding: 0 15px;
+    }
+}
