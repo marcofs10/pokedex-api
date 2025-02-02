@@ -1,0 +1,192 @@
+.advancedFilters {
+    display: flex;
+    gap: 50px;
+}
+
+.typeFilter {
+    width: 50%;
+}
+
+.typeFilter>h2 {
+    font-size: 28px;
+    text-align: start;
+    color: white;
+    margin-top: 0;
+}
+
+.typeFilter>div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2px;
+    row-gap: 8px;
+    gap: 12px;
+    width: 100%;
+    height: 60%;
+}
+
+.typeFilter>div>span {
+    cursor: pointer;
+    display: inline;
+    align-content: center;
+    color: white;
+    width: 70%;
+    height: 100%;
+    border-radius: 5px;
+    border: #A4A4A4 2px solid;
+}
+
+.otherFilters>h2 {
+    font-size: 28px;
+    text-align: start;
+    color: white;
+    margin-top: 0;
+}
+
+.otherFilters>section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.otherFilters>section>div {
+    background-color: #A4A4A4;
+    border-radius: 5px;
+    align-content: center;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    width: 25%;
+    height: 56px;
+}
+
+.otherFilters>section>div:hover {
+    background-color: #8B8B8B;
+}
+
+.otherFilters>section>button {
+    display: block;
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #EE6B2F;
+    font-size: 20px;
+    color: white;
+    width: 36%;
+}
+
+.otherFilters>section>button:hover {
+    background-color: #DA471B;
+}
+
+.otherFilters>section>button::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-image: url('/images/search.png');
+    margin-right: 5px;
+}
+
+.abilityList {
+    position: relative;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.abilityList>span {
+    position: relative;
+    background-color: #313131;
+    width: 360px;
+    height: 40px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 17px;
+    padding-left: 12px;
+}
+
+.abilityList>span::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-image: url('/images/pokeball.png');
+    margin-right: 10px;
+    filter: invert(100%) sepia(99%) saturate(0%) hue-rotate(230deg) brightness(107%) contrast(100%);
+}
+
+.abilityList>.closedList::after {
+    content: '';
+    position: absolute;
+    right: 12px;
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-image: url('/images/arrow.png');
+    transform: rotate(90deg);
+}
+
+.abilityList>.openList::after{
+    content: '';
+    position: absolute;
+    right: 12px;
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    background-image: url('/images/arrow.png');
+    transform: rotate(-90deg);
+}
+
+.abilityList>ul {
+    position: absolute;
+    width: 100%;
+    height: 280px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    left: 0px;
+    margin: 0;
+    padding: 10px 0;
+    background-color: #A4A4A4;
+    scrollbar-color: #313131 #A4A4A4;
+    border-radius: 0 0 5px 5px;
+}
+
+.abilityList>ul>li {
+    color: black;
+    list-style: none;
+    text-align: start;
+    font-size: 16px;
+    padding: 12px 8px 10px;
+    line-height: 18px;
+    margin: 0 10px;
+}
+
+.abilityList>ul>li:hover {
+    background-color: #313131;
+    color: #4DAD5B;
+}
+
+.numberRange{
+    margin-bottom: 80px;
+}
+
+.numberRange>input {
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    width: 70px;
+    height: 40px;
+} 
+
+.numberRange>span{
+    color: white;
+    padding: 0 16px;
+}

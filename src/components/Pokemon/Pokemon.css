@@ -1,0 +1,60 @@
+.pokemonThumbnail {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 36px;
+}
+
+.pokemonThumbnail:hover {
+    animation: .2s linear 0s 1 pokeHover;
+}
+
+@keyframes pokeHover {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(-1.5%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.pokemonThumbnail>div {
+    width: 100%;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.pokemonThumbnail>div>img {
+    background-color: #F2F2F2;
+    width: 80%;
+    padding: 10px;
+}
+
+.pokemonThumbnail>span {
+    color: #9191AD;
+    display: block;
+    text-align: start;
+}
+
+.pokemonThumbnail>h2 {
+    text-align: start;
+    margin: 0;
+    font-size: 24px;
+}
+
+.pokemonThumbnail>section{
+    display: flex;
+    gap: 4px;
+}
+
+.pokemonThumbnail>section>span{
+    width: 40%;
+    color: white;
+    font-size: 12px;
+    border-radius: 3px;
+}
