@@ -12,6 +12,16 @@ export const Content = ({ pokeListTotal }) => {
     const [pokeContentTotal, setPokeContentTotal] = useState([])
     const sortRef = useRef();
 
+    const randomize = () => {
+        let newData = [...pokeTotalFetch]
+        for (let i = newData.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [newData[i], newData[j]] = [newData[j], newData[i]];
+        }
+        setPokeContentTotal([...newData]);
+        newData = newData.slice(0, utils.chunkSize)
+        utils.getChunk(newData).then(data => setPokeContent(data))
+    };
 
     useEffect(() => {
         if (pokeListTotal) {
@@ -78,7 +88,7 @@ export const Content = ({ pokeListTotal }) => {
         <div>
             <section className='content'>
                 <div>
-                    <button><span>Surprise Me!</span></button>
+                    <button onClick={() => randomize()}><span>Surprise Me!</span></button>
                     <div>
                         <span>Sort By</span>
                         <div ref={sortRef} className={openList ? 'openListGrid' : 'closedListGrid'} onClick={() => setOpenList(!openList)}>
