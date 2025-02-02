@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import * as utils from '../../utils/utils.js'
 import './AdvancedFilters.css'
 
-export const AdvancedFilters = () => {
+export const AdvancedFilters = (setSearchFilter) => {
 
     const [openList, setOpenList] = useState(false);
     const [abilities, setAbilities] = useState([])
@@ -13,6 +13,13 @@ export const AdvancedFilters = () => {
     const [finalRange, setFinalRange] = useState(utils.finalPokeId)
     const abilityRef = useRef()
 
+    const resetAdvancedFilters = () => {
+        setTypeFilter('')
+        setAbilityFilter('all')
+        setInitialRange(1)
+        setFinalRange(utils.finalPokeId)
+        setSearchFilter([])
+    }
 
     useEffect(() => {
         async function getAbilities() {
@@ -66,7 +73,7 @@ export const AdvancedFilters = () => {
                     <input type="text" value={finalRange} onChange={(e) => setFinalRange(parseInt(e.target.value))} />
                 </div>
                 <section>
-                    <div>Reset</div>
+                    <div onClick={() => resetAdvancedFilters()}>Reset</div>
                     <button>Search</button>
                 </section>
             </div>

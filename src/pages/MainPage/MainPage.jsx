@@ -9,6 +9,7 @@ export const MainPage = () => {
 
     const [openWrapper, setOpenWrapper] = useState(false);
     const [pokeListTotal, setPokeListTotal] = useState([])
+    const [searchFilter, setSearchFilter] = useState()
 
 
     useEffect(() => {
@@ -26,7 +27,7 @@ export const MainPage = () => {
             <Search pokeListTotal={pokeListTotal} />
             <section style={{ height: `${openWrapper ? '0px' : '24px'}` }} className='closedWrapper'></section>
             <section style={{ height: `${openWrapper ? '520px' : '0px'}` }} className='openWrapper'>
-                <AdvancedFilters/>
+                <AdvancedFilters setSearchFilter={setSearchFilter}/>
             </section>
             <div>
                 <div className='handler' onClick={() => setOpenWrapper(!openWrapper)}>
