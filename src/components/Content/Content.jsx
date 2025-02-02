@@ -6,6 +6,7 @@ import './Content.css'
 export const Content = ({ pokeListTotal }) => {
 
     const [openList, setOpenList] = useState(false);
+    const [sorting, setSorting] = useState('Lowest Number(First)')
     const [pokeTotalFetch,setPokeTotalFetch] = useState()
     const [pokeContent, setPokeContent] = useState([])
     const [pokeContentTotal, setPokeContentTotal] = useState([])
@@ -15,10 +16,33 @@ export const Content = ({ pokeListTotal }) => {
     useEffect(() => {
         if (pokeListTotal) {
             setPokeTotalFetch([...pokeListTotal])
-            const newData = pokeListTotal.slice(0, utils.chunkSize)
-            utils.getChunk(newData).then(data => setPokeContent(data))
+            if (sorting === 'A-Z' || sorting === 'Z-A') {
+                sortContentAZ(pokeListTotal, sorting, true)
+            } else {
+                sortContentNum(pokeListTotal, sorting, true)
+            }
         }
     }, [pokeListTotal])
+
+    const sortContentNum = (array, string, isEffect) => {
+        if (string !== sorting || isEffect === true) {
+            let newData = [...array].sort((a, b) => parseInt(a.url.substring('https://pokeapi.co/api/v2/pokemon/'.length).replace('/', '')) > parseInt(b.url.substring('https://pokeapi.co/api/v2/pokemon/'.length).replace('/', '')) ? 1 : -1)
+            if (string === 'Highest Number(First)') newData.reverse()
+            setPokeContentTotal([...newData])
+            newData = newData.slice(0, utils.chunkSize)
+            utils.getChunk(newData).then(data => setPokeContent(data))
+        }
+    }
+
+    const sortContentAZ = (array, string, isEffect) => {
+        if (string !== sorting || isEffect === true) {
+            let newData = [...array].sort((a, b) => a.name > b.name ? 1 : -1)
+            if (string === 'Z-A') newData.reverse()
+            setPokeContentTotal([...newData])
+            newData = newData.slice(0, utils.chunkSize)
+            utils.getChunk(newData).then(data => setPokeContent(data))
+        }
+    }
 
     const getNextChunk = async () => {
         const firstElement = pokeContent.length
@@ -28,6 +52,16 @@ export const Content = ({ pokeListTotal }) => {
             newData = await utils.getChunk(newData)
             setPokeContent([...pokeContent, ...newData])
         }
+    }
+
+    const handleSortNum = (array, string, isEffect) => {
+        setSorting(string)
+        sortContentNum(array, string, isEffect)
+    }
+
+    const handleSortAZ = (array, string, isEffect) => {
+        setSorting(string)
+        sortContentAZ(array, string, isEffect)
     }
 
     useEffect(() => {
@@ -48,12 +82,12 @@ export const Content = ({ pokeListTotal }) => {
                     <div>
                         <span>Sort By</span>
                         <div ref={sortRef} className={openList ? 'openListGrid' : 'closedListGrid'} onClick={() => setOpenList(!openList)}>
-                            <span>Lowest Number(First)</span>
+                            <span>{sorting}</span>
                             {openList && <ul>
-                                <li>Lowest Number(First)</li>
-                                <li>Highest Number(First)</li>
-                                <li>A-Z</li>
-                                <li>Z-A</li>
+                                <li onClick={() => handleSortNum(pokeContentTotal, 'Lowest Number(First)', false)}>Lowest Number(First)</li>
+                                <li onClick={() => handleSortNum(pokeContentTotal, 'Highest Number(First)', false)}>Highest Number(First)</li>
+                                <li onClick={() => handleSortAZ(pokeContentTotal, 'A-Z', false)}>A-Z</li>
+                                <li onClick={() => handleSortAZ(pokeContentTotal, 'Z-A', false)}>Z-A</li>
                             </ul>}
                         </div>
                     </div>

@@ -1,3 +1,7 @@
+export const finalPokeId = 493
+
+export const chunkSize = 12;
+
 export const zeroFront = (num, places) => String(num).padStart(places, '0')
 
 export const capFirstLetter = (string) => String(string?.charAt(0).toUpperCase() + string?.slice(1));
