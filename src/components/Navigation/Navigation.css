@@ -1,0 +1,106 @@
+.navigation {
+    width: 100%;
+    position: relative;
+}
+
+.navigation>div {
+    display: flex;
+}
+
+.navigation>div:nth-child(2) {
+    position: absolute;
+    display: flex;
+    left: 25%;
+    bottom: 0;
+    background-color: white;
+    width: 50%;
+    height: 51px;
+    font-size: 32px;
+    justify-content: center;
+    align-items: end;
+    line-height: 32px;
+}
+
+.navigation>div:nth-child(2)::before {
+    content: '';
+    background: transparent url(https://assets.pokemon.com/static2/_ui/img/chrome/notches/notch-white-xxl.png);
+    width: 75px;
+    height: 52px;
+    position: absolute;
+    left: -75px;
+    bottom: 0;
+}
+
+.navigation>div:nth-child(2)::after {
+    content: '';
+    background: transparent url(https://assets.pokemon.com/static2/_ui/img/chrome/notches/notch-white-xxl.png);
+    background-position: right top;
+    width: 75px;
+    height: 52px;
+    position: absolute;
+    right: -75px;
+    bottom: 0;
+}
+
+.navigation>div:nth-child(2)>span {
+    color: #61618F;
+    margin-left: 10px;
+}
+
+.link {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    text-decoration: none;
+    color: #616161;
+    font-size: 24px;
+    width: 50%;
+    height: 6.25rem; /*100px*/
+    background-color: #A4A4A4;
+    transition: all 0.5s;
+}
+
+.link:hover {
+    color: #616161;
+    background-color: #30A7D7;
+}
+
+.link>span {
+    color: white;
+    margin: 0 14px;
+}
+
+.previous {
+    margin-right: 2px;
+}
+
+.link>span {
+    display: flex;
+    align-items: center;
+}
+
+.previous>span::before {
+    content: " ";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-image: url('/images/arrow2.png');
+    margin-right: 10px;
+    transform: rotate(-180deg);
+}
+
+.next>span::after {
+    content: " ";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-image: url('/images/arrow2.png');
+    margin-left: 10px;
+}
+
+.next {
+    margin-left: 2px;
+}

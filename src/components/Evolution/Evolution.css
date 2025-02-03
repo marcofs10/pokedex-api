@@ -1,0 +1,125 @@
+.evolution {
+    width: 100%;
+    background: white url(https://assets.pokemon.com/static2/_ui/img/chrome/body_gray_bg.png);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em 1rem 3rem;
+    border-radius: 5px;
+    position: relative;
+    margin-top:20px;
+    box-sizing: border-box;
+}
+
+.evolution::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    border-top: 20px solid transparent;
+    border-left: 20px solid white;
+    width: 0;
+}
+
+.evolution>h2 {
+    color: white;
+    align-self: start;
+    margin: 0 1em;
+}
+
+.evolution ul {
+    padding: 0;
+}
+
+.evolution>ul {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    align-items: center;
+    width: 85%;
+    max-width: 80%;
+    align-self: center;
+}
+
+.evolution>ul>li {
+    list-style: none;
+    width: 17rem;
+    display: flex;
+    justify-content: center;
+}
+
+.evolution>ul>li>ul {
+    width: 100%;
+    max-width: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.evolution>ul>li>ul>.pokeIconEvo {
+    list-style: none;
+    color: white;
+    cursor: pointer;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.evolution>ul>li>ul>.pokeIconEvo>div:first-child {
+    width: 100%;
+    padding: 5%;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    background-color: #616161;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.lateStage>ul>.pokeIconEvo>div:first-child::before {
+    content: " ";
+    z-index: 6;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -48%;
+    width: 32px;
+    height: 32px;
+    transform: translateY(-50%);
+    background-size: contain;
+    background-image: url('/images/arrow.png');
+    margin-left: 10px;
+}
+
+.pokeIconEvo{
+    text-decoration: none;
+}
+
+.pokeIconEvo>div>img {
+    display: block;
+    background-size: contain;
+    width: 100%;
+}
+
+.pokeIconEvo>h3 {
+    margin: 8px 0;
+}
+
+.pokeIconEvo>h3>span {
+    color: #A4ACAF;
+    margin-left: 5px;
+}
+
+.pokeIconEvo>div {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.pokeIconEvo>div>span{
+    display: block;
+    width: 3.5rem;
+    border-radius: 5px;
+    font-size: 14px;
+    align-content: center;
+}

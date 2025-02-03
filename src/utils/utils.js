@@ -2,9 +2,47 @@ export const finalPokeId = 493
 
 export const chunkSize = 12;
 
+export const statHeightUnit = 17;
+
+export const statHeightMeasure = 0.75;
+
 export const zeroFront = (num, places) => String(num).padStart(places, '0')
 
 export const capFirstLetter = (string) => String(string?.charAt(0).toUpperCase() + string?.slice(1));
+
+export const calcStatHeight = (stat) => (Math.ceil(stat / statHeightUnit)) * 0.75
+
+export const extractIdFromURL = (url) => url?.substring('https://pokeapi.co/api/v2/pokemon/'.length).replace('/', '')
+
+export const extractIdFromURLSpecies = (url) => url.substring('https://pokeapi.co/api/v2/pokemon-species/'.length).replace('/', '')
+
+export const getWeaknessInfo = async (url) => {
+    let data = await fetch(url)
+    data = await data.json()
+    return data
+}
+
+const arrangeEvoData = (result, data, stage) => {
+    if (parseInt(extractIdFromURLSpecies(data.species.url)) > finalPokeId) return
+    const newElement = { name: data.species.name, id: parseInt(extractIdFromURLSpecies(data.species.url)), stage: stage, route: result[stage] ? result[stage].length : 0 }
+    result[stage] = result[stage] ? [...result[stage], newElement] : [newElement]
+    stage = stage + 1
+    if (data.evolves_to.length === 0) return
+    for (let i = 0; i < data.evolves_to.length; i++) {
+        arrangeEvoData(result, structuredClone(data.evolves_to[i]), stage)
+    }
+    return
+}
+
+export const getEvoData = (jsonData) => {
+    let newData = jsonData.chain
+    let route = 0
+    let stage = 0
+    const result = []
+    arrangeEvoData(result, newData, stage, route)
+    //getPokeImg(result)
+    return result
+}
 
 export const getChunk = async (newData) => {
     const pokeData = [];

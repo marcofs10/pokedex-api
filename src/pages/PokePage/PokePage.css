@@ -1,0 +1,80 @@
+.pokePage {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+    background: #fff url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png);
+}
+
+.pokePage>div {
+    background-color: white;
+    width: 70%;
+    padding: 0 20px;
+    min-width: 69.625rem;
+}
+
+.pokePage>.info {
+    display: flex;
+    padding-top: 40px;
+    gap: 20px;
+}
+
+.pokePage>.vertical {
+    width: 60%;
+    min-width: 60%;
+    padding: 0 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vertical>.sectionVertical{
+    width: 60%;
+}
+
+.pokePage>div {
+    padding-bottom: 20px;
+}
+
+.info>div {
+    width: 50%;
+}
+
+.info>div>img {
+    width: 100%;
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    padding-bottom: 30px;
+    margin-bottom: 10px;
+    -webkit-user-drag: none;
+}
+
+.info>div>p {
+    font-size: 20px;
+    text-align: start;
+}
+
+.info>div>h2 {
+    text-align: start;
+}
+
+.pokePage>div:last-child {
+    display: flex;
+    justify-content: end;
+}
+
+.pokePage>div>button {
+    border-radius: 5px;
+    color: white;
+    background-color: #EE6B2F;
+    transition: all 0.3s
+}
+
+.pokePage>div>button:hover {
+    background-color: #DA471B;
+}
+
+

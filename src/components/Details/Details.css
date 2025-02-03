@@ -1,0 +1,35 @@
+.details {
+    width: 100%;
+    background-color: #30A7D7;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.details>div {
+    width: 50%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.details>div>span {
+    display: block;
+    color: #282121;
+    text-align: start;
+    font-size: 20px;
+}
+
+.details>div>span:first-child {
+    color: white;
+    font-size: 16px;
+}
+
+.details>div>img {
+    width: 50px;
+    -webkit-user-drag: none;
+}
