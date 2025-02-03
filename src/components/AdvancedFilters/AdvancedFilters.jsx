@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import * as utils from '../../utils/utils.js'
 import './AdvancedFilters.css'
 
-export const AdvancedFilters = (setSearchFilter) => {
+export const AdvancedFilters = ({ setAdvFilters, setSearchFilter, fireTrigger }) => {
 
     const [openList, setOpenList] = useState(false);
     const [abilities, setAbilities] = useState([])
@@ -19,6 +19,16 @@ export const AdvancedFilters = (setSearchFilter) => {
         setInitialRange(1)
         setFinalRange(utils.finalPokeId)
         setSearchFilter([])
+    }
+
+    const sendAdvancedFilters = () => {
+        setAdvFilters({
+            typeFilter: typeFilter,
+            abilityFilter: abilityFilter,
+            initialRange: initialRange,
+            finalRange: finalRange,
+        })
+        fireTrigger()
     }
 
     useEffect(() => {
@@ -74,7 +84,7 @@ export const AdvancedFilters = (setSearchFilter) => {
                 </div>
                 <section>
                     <div onClick={() => resetAdvancedFilters()}>Reset</div>
-                    <button>Search</button>
+                    <button onClick={() => sendAdvancedFilters()}>Search</button>
                 </section>
             </div>
         </div>

@@ -3,7 +3,7 @@ import { Pokemon } from '../../components/Pokemon/Pokemon'
 import * as utils from '../../utils/utils.js'
 import './Content.css'
 
-export const Content = ({ pokeListTotal }) => {
+export const Content = ({ pokeListTotal, pokeAdvancedFilterTotal }) => {
 
     const [openList, setOpenList] = useState(false);
     const [sorting, setSorting] = useState('Lowest Number(First)')
@@ -34,6 +34,16 @@ export const Content = ({ pokeListTotal }) => {
         }
     }, [pokeListTotal])
 
+    useEffect(() => {
+        if (pokeAdvancedFilterTotal) {
+            if (sorting === 'A-Z' || sorting === 'Z-A') {
+                sortContentAZ(pokeAdvancedFilterTotal, sorting, true)
+            } else {
+                sortContentNum(pokeAdvancedFilterTotal, sorting, true)
+            }
+        }
+    }, [pokeAdvancedFilterTotal])
+
     const sortContentNum = (array, string, isEffect) => {
         if (string !== sorting || isEffect === true) {
             let newData = [...array].sort((a, b) => parseInt(a.url.substring('https://pokeapi.co/api/v2/pokemon/'.length).replace('/', '')) > parseInt(b.url.substring('https://pokeapi.co/api/v2/pokemon/'.length).replace('/', '')) ? 1 : -1)
@@ -56,7 +66,6 @@ export const Content = ({ pokeListTotal }) => {
 
     const getNextChunk = async () => {
         const firstElement = pokeContent.length
-        //TODO: retirar validacion y tratar que el boton desaparezca cuando ya no haya mas en la lista
         if (firstElement !== pokeContentTotal.length) {
             let newData = [...pokeContentTotal].slice(firstElement, firstElement + utils.chunkSize)
             newData = await utils.getChunk(newData)

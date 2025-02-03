@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Suggestion } from '../Suggestion/Suggestion';
 import './Search.css'
 
-export const Search = ({ pokeListTotal }) => {
+export const Search = ({ pokeListTotal, setSearchFilter, fireTrigger }) => {
 
     const [backUpText, setBackUpText] = useState('');
     const [text, setText] = useState('');
@@ -18,6 +18,12 @@ export const Search = ({ pokeListTotal }) => {
     }
 
     const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            setOpen(false);
+            setSearchFilter([...suggestions])
+            fireTrigger()
+            return;
+        }
         if (text === '') return;
         if (e.key === 'ArrowUp') {
             e.preventDefault();
@@ -53,6 +59,13 @@ export const Search = ({ pokeListTotal }) => {
 
     const handleOpen = () => {
         setOpen(true)
+    }
+
+    const handleButtonSearch = () => {
+        setOpen(false)
+        setSelectedItem(-1)
+        setSearchFilter([...suggestions])
+        fireTrigger()
     }
 
     useEffect(() => {
@@ -99,7 +112,7 @@ export const Search = ({ pokeListTotal }) => {
                             }
                         </div>
                     </form>
-                    <button className='buttonSubmit'>
+                    <button className='buttonSubmit' onClick={handleButtonSearch}>
                         <img src='/images/search.webp' />
                     </button>
                 </section>
