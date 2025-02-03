@@ -18,3 +18,24 @@
     border-radius: 5px;
     align-content: center;
 }
+
+@media screen and (max-width:590px){
+    .typeweakness>h2{
+        font-size: 22px;
+    }
+
+    .typeweakness>div>span {
+        height: 26px;
+    }
+}
+
+@media screen and (max-width:424px){
+    .typeweakness>h2{
+        font-size: 18px;
+    }
+
+    .typeweakness>div>span {
+        height: 20px;
+        font-size: 12px;
+    }
+}

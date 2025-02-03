@@ -33,3 +33,9 @@
     width: 50px;
     -webkit-user-drag: none;
 }
+
+@media screen and (max-width:590px){
+    .details>div>span {
+        font-size: 16px;
+    }
+}

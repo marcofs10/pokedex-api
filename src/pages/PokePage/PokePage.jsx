@@ -8,7 +8,7 @@ import { Navigation } from '../../components/Navigation/Navigation.jsx'
 import * as utils from '../../utils/utils.js'
 import './PokePage.css'
 
-export const PokePage = () => {
+export const PokePage = ({ isMobile }) => {
 
     const [pokeInfo, setPokeInfo] = useState()
     const [previous, setPrevious] = useState()
@@ -85,6 +85,24 @@ export const PokePage = () => {
 
     document.title = `${utils.capFirstLetter(pokeInfo?.name)} | Pokédex`;
 
+    if (isMobile) {
+        return (
+            <div className='pokePage'>
+                <Navigation previous={previous} next={next} pokeInfo={pokeInfo} id={idInt} isMobile={isMobile} />
+                <div className='info vertical'>
+                    <img src={pokeInfo?.sprites.other["official-artwork"].front_default} alt="" />
+                    <p>{pokeDetails?.flavor_text_entries[0].flavor_text.replace('', ' ')}</p>
+                    <TypeWeakness pokeInfo={pokeInfo} weaknesses={weaknesses} />
+                    <Details className='sectionVertical' pokeInfo={pokeInfo} pokeDetails={pokeDetails} />
+                    <Stats stats={pokeInfo?.stats} isMobile={isMobile} />
+                    <Evolution evoChain={evoChain} />
+                </div>
+                <div className='exploreVertical'>
+                    <button onClick={() => navigate('/pokedex')}>Explore More Pokémon</button>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className='pokePage'>

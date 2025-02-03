@@ -123,3 +123,141 @@
     font-size: 14px;
     align-content: center;
 }
+
+@media screen and (max-width:1321px){
+    .lateStage>ul>.pokeIconEvo>div:first-child::before {
+        left: -65%;
+    }
+}
+
+
+@media screen and (max-width:970px){
+    .evolution>ul {
+        flex-direction: column;
+        width: 100% !important;
+    }
+
+    .evolution>ul>li {
+        width: 100%;
+    }
+
+    .pokeIconEvo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pokeIconEvo>div {
+        width: 100%;
+    }
+
+    .lateStage{
+        position: relative;
+        margin-top: 3rem;
+    }
+
+    .lateStage>ul>.pokeIconEvo>div:first-child::before {
+        display: none;
+    }
+
+    .lateStage::before{
+        content: " ";
+        z-index: 6;
+        display: block;
+        position: absolute;
+        top: -3.5rem;
+        left: 10.5rem;
+        width: 32px;
+        height: 32px;
+        transform: translateY(-50%);
+        transform: rotate(90deg);
+        background-size: contain;
+        background-image: url('/images/arrow.png');
+        margin-left: 10px;
+    }
+
+    .lateStage>ul{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .evolution>ul>li>ul{
+        flex-direction: row;
+    }
+
+    .evolution>ul>li>ul>.pokeIconEvo {
+        width: 28%;
+        min-width: 9rem;
+    }
+}
+
+@media screen and (max-width:590px){
+    .evolution>ul>li {
+        width: 100%;
+    }
+
+    .lateStage::before{
+        left: 7.25rem;
+    }
+
+    .evolution>ul>li>ul>.pokeIconEvo {
+        width: 28%;
+        width: 7.3rem !important;
+        min-width: 3rem;
+    }
+
+    .evolution>h2 {
+        font-size: 22px;
+    }
+
+    .pokeIconEvo>h3 {
+        font-size: 16px;
+    }
+
+    .evolution>ul>li>ul {
+        gap: 45px;
+    }
+}
+
+
+@media screen and (max-width:424px){
+    .evolution>ul {
+        gap: 2rem;
+    }
+
+    .evolution>h2 {
+        font-size: 18px;
+    }
+
+    .lateStage::before{
+        top: -3.5rem;
+        left: 5.25rem;
+    }
+
+    .pokeIconEvo>div:last-child{
+        width: 7rem;
+    }
+
+    .pokeIconEvo>div>span{
+        font-size: 12px;
+    }
+
+    .pokeIconEvo>h3>span {
+        display: none;
+    }
+
+    .lateStage>ul{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .evolution>ul>li>ul {
+        gap: 35px;
+    }
+
+    .evolution>ul>li>ul>.pokeIconEvo {
+        width: 35% !important;
+        width: 5.25rem !important;
+        min-width: 3rem;
+    }
+}

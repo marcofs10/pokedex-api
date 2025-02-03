@@ -77,4 +77,104 @@
     background-color: #DA471B;
 }
 
+@media screen and (max-width:1321px){
+    .pokePage {
+        width: 100%;
+        min-width: 0px;
+    }
+
+    .pokePage>div {
+        min-width: 56.875rem;
+    }
+}
+
+@media screen and (max-width:1024px){
+    .pokePage {
+        width: 100%;
+        min-width: 0px;
+    }
+
+    .pokePage>div {
+        width: 86%;
+        min-width: 86%;
+    }
+}
+
+@media screen and (max-width:970px){
+    .pokePage {
+        width: auto;
+        min-width: 0px;
+    }
+
+    .pokePage>.vertical {
+        min-width: 35.75rem;
+        padding: 0 30px;
+    }
+
+    .pokePage>.info{
+        gap: 0px;
+    }
+
+    .vertical>p {
+        font-size: 20px;
+    }
+
+    .pokePage>.exploreVertical{
+        width: 60%;
+        min-width: 35.75rem;
+        padding: 20px 30px;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width:590px){
+    .info>img{
+        width: 50%;
+    }
+    .pokePage>.vertical {
+        width: 26.563rem;
+        min-width: 0px;
+        padding: 0 20px;
+    }
+
+    .vertical>p {
+        font-size: 16px;
+    }
+    .vertical>.typeweakness{
+        width: 96%;
+    }
+
+    .vertical>p{
+        margin-bottom: 0;
+    }
+
+    .pokePage>.exploreVertical{
+        width: 26.563rem;
+        min-width: 0;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width:424px){
+    .pokePage>.vertical {
+        width: 20rem;
+        min-width: 0px;
+        padding: 0 10px;
+    }
+
+    .vertical>p {
+        font-size: 14px;
+    }
+
+    .pokePage>.exploreVertical{
+        width: 20rem;
+        min-width: 0;
+        padding: 15px 10px;
+    }
+
+    .pokePage>.exploreVertical>button{
+        font-size: 14px;
+    }
+}
+
 

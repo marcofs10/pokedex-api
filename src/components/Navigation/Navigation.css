@@ -104,3 +104,40 @@
 .next {
     margin-left: 2px;
 }
+
+@media screen and (max-width:590px){
+    .navigation>div:nth-child(2) {
+        font-size: 22px;
+        height: 38px;
+    }
+
+    .link {
+        padding-top: 10px;
+        font-size: 16px;
+        height: 4.5rem;
+    }
+
+    .link>span {
+        color: white;
+        margin: 0 4px;
+    }
+
+    .navigation>div:nth-child(2)::before {
+        width: 75px;
+        height: 39px;
+        left: -75px;
+        bottom: 0px;
+    }
+    
+    .navigation>div:nth-child(2)::after {
+        width: 75px;
+        height: 39px;
+        right: -75px;
+    }
+}
+
+@media screen and (max-width:424px){
+    .navigation>div:nth-child(2) {
+        font-size: 18px;
+    }
+}

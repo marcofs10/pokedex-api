@@ -2,8 +2,15 @@ import React, { useEffect, useState } from 'react'
 import * as utils from '../../utils/utils.js'
 import './Stats.css'
 
-export const Stats = ({stats}) => {
+export const Stats = ({stats,isMobile}) => {
     const [show, setShow] = useState(false)
+
+    if(isMobile && stats){
+        const replace = ['hp' ,'att' ,'def' ,'sp.Att' ,'sp.Def' ,'sp']
+        for(let i = 0; i<6; i++){
+            stats[i].stat.name = replace[i]
+        }
+    }
 
     useEffect(()=>{
         let timer = setTimeout(() => {
