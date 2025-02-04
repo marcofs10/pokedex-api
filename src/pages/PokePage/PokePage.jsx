@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { Evolution } from '../../components/Evolution/Evolution.jsx'
 import { Stats } from '../../components/Stats/Stats.jsx'
 import { Details } from '../../components/Details/Details.jsx'
@@ -18,6 +18,7 @@ export const PokePage = ({ isMobile }) => {
     const [evoChain, setEvoChain] = useState()
     const id = useParams()
     const idInt = parseInt(id.id)
+    const navigate = useNavigate()
 
     useEffect(() => {
         const getPokeInfo = async () => {
@@ -122,7 +123,7 @@ export const PokePage = ({ isMobile }) => {
                 <Evolution evoChain={evoChain} />
             </div>
             <div>
-                <button>Explore More Pokémon</button>
+                <button onClick={() => navigate('/pokedex')}>Explore More Pokémon</button>
             </div>
         </div>
     )
