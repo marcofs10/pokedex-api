@@ -6,22 +6,19 @@ export const Search = ({ pokeListTotal, setSearchFilter, fireTrigger }) => {
 
     const [backUpText, setBackUpText] = useState('');
     const [text, setText] = useState('');
-    const [suggestions, setSuggestions] = useState([...pokeListTotal]);
+    const [suggestions, setSuggestions] = useState([]);
     const [suggestionsShown, setSuggestionsShown] = useState([]);
     const [selectedItem, setSelectedItem] = useState(-1);
     const [open, setOpen] = useState(false);
     const [trigger, setTrigger] = useState(false);
     const searchRef = useRef();
-
     const handleSubmit = (e) => {
         e.preventDefault()
     }
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
-            setOpen(false);
-            setSearchFilter([...suggestions])
-            fireTrigger()
+            handleButtonSearch()
             return;
         }
         if (text === '') return;
@@ -65,11 +62,20 @@ export const Search = ({ pokeListTotal, setSearchFilter, fireTrigger }) => {
         setOpen(false)
         setSelectedItem(-1)
         setSearchFilter([...suggestions])
+        setText("")
+        setTrigger(!trigger)
         fireTrigger()
     }
 
+    useEffect(()=>{
+        if(pokeListTotal){
+            setSuggestions([...pokeListTotal])
+        }
+    },[pokeListTotal])
+
     useEffect(() => {
         let newSuggestions = [...pokeListTotal].filter(poke => poke.name.toLowerCase().includes(text.toLowerCase()))
+        console.log({newSuggestions})
         setSuggestions([...newSuggestions])
         newSuggestions = newSuggestions.slice(0, 5)
         setSuggestionsShown([...newSuggestions])

@@ -14,7 +14,6 @@ export const AdvancedFilters = ({ pokeListTotal, setAdvFilters, setSearchFilter,
     const abilityRef = useRef()
 
     const resetAdvancedFilters = () => {
-        console.log("1")
         setTypeFilter('')
         setAbilityFilter('all')
         setInitialRange(1)
