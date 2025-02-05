@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import * as utils from '../../utils/utils.js'
 import './AdvancedFilters.css'
 
-export const AdvancedFilters = ({ setAdvFilters, setSearchFilter, fireTrigger }) => {
+export const AdvancedFilters = ({ pokeListTotal, setAdvFilters, setSearchFilter, fireTrigger }) => {
 
     const [openList, setOpenList] = useState(false);
     const [abilities, setAbilities] = useState([])
@@ -14,11 +14,12 @@ export const AdvancedFilters = ({ setAdvFilters, setSearchFilter, fireTrigger })
     const abilityRef = useRef()
 
     const resetAdvancedFilters = () => {
+        console.log("1")
         setTypeFilter('')
         setAbilityFilter('all')
         setInitialRange(1)
         setFinalRange(utils.finalPokeId)
-        setSearchFilter([])
+        setSearchFilter([...pokeListTotal])
     }
 
     const sendAdvancedFilters = () => {
