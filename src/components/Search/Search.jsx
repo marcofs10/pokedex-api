@@ -75,7 +75,6 @@ export const Search = ({ pokeListTotal, setSearchFilter, fireTrigger }) => {
 
     useEffect(() => {
         let newSuggestions = [...pokeListTotal].filter(poke => poke.name.toLowerCase().includes(text.toLowerCase()))
-        console.log({newSuggestions})
         setSuggestions([...newSuggestions])
         newSuggestions = newSuggestions.slice(0, 5)
         setSuggestionsShown([...newSuggestions])
