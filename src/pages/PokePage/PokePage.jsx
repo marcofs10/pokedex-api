@@ -99,7 +99,7 @@ export const PokePage = ({ isMobile }) => {
                     <Evolution evoChain={evoChain} />
                 </div>
                 <div className='exploreVertical'>
-                    <button onClick={() => navigate('/pokedex')}>Explore More Pokémon</button>
+                    <button onClick={() => navigate('/pokedex-api/')}>Explore More Pokémon</button>
                 </div>
             </div>
         )
@@ -123,7 +123,7 @@ export const PokePage = ({ isMobile }) => {
                 <Evolution evoChain={evoChain} />
             </div>
             <div>
-                <button onClick={() => navigate('/pokedex')}>Explore More Pokémon</button>
+                <button onClick={() => navigate('/pokedex-api/')}>Explore More Pokémon</button>
             </div>
         </div>
     )
