@@ -9,7 +9,7 @@ export const Suggestion = ({ suggestion, selected, index, setSelectedItem }) => 
 
     return (
         <div
-            onClick={() => navigate(`/pokedex/pokemon/${utils.extractIdFromURL(suggestion.url)}`)}
+            onClick={() => navigate(`/pokedex-api/pokemon/${utils.extractIdFromURL(suggestion.url)}`)}
             onMouseEnter={() => setSelectedItem(index)}
             className={`suggestion ${selected ? 'selected' : ''}`}>{utils.capFirstLetter(suggestion.name)}
         </div>

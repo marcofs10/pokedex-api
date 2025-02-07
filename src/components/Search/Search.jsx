@@ -118,7 +118,7 @@ export const Search = ({ pokeListTotal, setSearchFilter, fireTrigger }) => {
                         </div>
                     </form>
                     <button className='buttonSubmit' onClick={handleButtonSearch}>
-                        <img src='/images/search.webp' />
+                        <img src='/pokedex-api/images/search.png' />
                     </button>
                 </section>
             </div>

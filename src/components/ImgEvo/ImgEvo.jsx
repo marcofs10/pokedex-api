@@ -26,7 +26,7 @@ export const ImgEvo = ({ id, name, ...delegated }) => {
         <div
             {...delegated}
             className='pokeIconEvo'
-            onClick={() => navigate(`/pokedex/pokemon/${id}`)}>
+            onClick={() => navigate(`/pokedex-api/pokemon/${id}`)}>
             <div>
                 <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`} alt='' />
             </div>

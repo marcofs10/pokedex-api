@@ -8,7 +8,7 @@ export const Pokemon = ({ name, id, image, types }) => {
     const navigate = useNavigate()
 
     return (
-        <div className='pokemonThumbnail' onClick={()=>navigate(`/pokedex/pokemon/${id}`)}>
+        <div className='pokemonThumbnail' onClick={()=>navigate(`/pokedex-api/pokemon/${id}`)}>
             <div>
                 <img src={image} alt="" />
             </div>
