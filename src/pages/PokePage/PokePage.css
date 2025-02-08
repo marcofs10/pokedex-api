@@ -1,5 +1,6 @@
 .pokePage {
     height: 100%;
+    width: 87rem;
     text-align: center;
     display: flex;
     flex-direction: column;
