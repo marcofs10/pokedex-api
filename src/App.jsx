@@ -20,7 +20,7 @@ function App() {
 
     return (
         <>
-            <Routes>
+            <Routes basename='/pokedex-api/'>
                 <Route path="/pokedex-api/" element={<MainPage/>}/>
                 <Route path="/pokedex-api/pokemon/:id" element={<PokePage
                     isMobile={isMobile}
