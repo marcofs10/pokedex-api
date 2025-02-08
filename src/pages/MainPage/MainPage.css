@@ -1,6 +1,6 @@
 .mainPage {
-    width: 1300px;
-    min-width: 1300px;
+    width: 81.25rem;
+    min-width: 81.25rem;
     text-align: center;
     display: flex;
     flex-direction: column;
