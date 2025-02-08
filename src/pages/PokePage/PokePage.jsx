@@ -20,6 +20,8 @@ export const PokePage = ({ isMobile }) => {
     const idInt = parseInt(id.id)
     const navigate = useNavigate()
 
+    const description = pokeDetails?.flavor_text_entries.filter(el=>el.language.name==='en')[0].flavor_text
+    
     useEffect(() => {
         const getPokeInfo = async () => {
             let newData 
@@ -92,7 +94,7 @@ export const PokePage = ({ isMobile }) => {
                 <Navigation previous={previous} next={next} pokeInfo={pokeInfo} id={idInt} isMobile={isMobile} />
                 <div className='info vertical'>
                     <img src={pokeInfo?.sprites.other["official-artwork"].front_default} alt="" />
-                    <p>{pokeDetails?.flavor_text_entries[0].flavor_text.replace('', ' ')}</p>
+                    <p>{description?.replace('', ' ')}</p>
                     <TypeWeakness pokeInfo={pokeInfo} weaknesses={weaknesses} />
                     <Details className='sectionVertical' pokeInfo={pokeInfo} pokeDetails={pokeDetails} />
                     <Stats stats={pokeInfo?.stats} isMobile={isMobile} />
@@ -114,7 +116,7 @@ export const PokePage = ({ isMobile }) => {
                     <Stats stats={pokeInfo?.stats} />
                 </div>
                 <div>
-                    <p>{pokeDetails?.flavor_text_entries[0].flavor_text.replace('', ' ')}</p>
+                    <p>{description?.replace('', ' ')}</p>
                     <Details pokeInfo={pokeInfo} pokeDetails={pokeDetails} />
                     <TypeWeakness pokeInfo={pokeInfo} weaknesses={weaknesses} />
                 </div>
